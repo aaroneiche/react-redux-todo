@@ -15,7 +15,16 @@ const AddTodo = ({ dispatch }) => {
             return;
           }
 
-          dispatch(addTodo(input.value, dateInput.value));
+          let dateVal;
+          if (dateInput.value === "") {
+            //set the date value to today.
+            let d = new Date();
+            dateVal = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+          } else {
+            dateVal = dateInput.value;
+          }
+
+          dispatch(addTodo(input.value, dateVal));
           input.value = "";
         }}
       >

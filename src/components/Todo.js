@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Todo = ({ onClick, completed, text }) => {
+const Todo = ({ onClick, completed, text, date }) => {
   const divStyle = {
     listStyleType: "none",
     cursor: "pointer"
+  };
+
+  const dueDateStyle = {
+    marginLeft: "40px"
   };
 
   return (
@@ -16,6 +20,7 @@ const Todo = ({ onClick, completed, text }) => {
       }}
     >
       <input type="checkbox" checked={completed} /> {text}
+      <span style={dueDateStyle}>{date}</span>
     </li>
   );
 };
