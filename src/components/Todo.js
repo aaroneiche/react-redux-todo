@@ -21,6 +21,7 @@ const Todo = ({ onClick, completed, text, date }) => {
     >
       <input type="checkbox" checked={completed} /> {text}
       <span style={dueDateStyle}>{date}</span>
+      <span onClick={() => removeTodo()}>❌</span>
     </li>
   );
 };
